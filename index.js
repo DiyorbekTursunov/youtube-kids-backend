@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const { connect_db } = require('./config/db.config');
 const videoRoute = require("./routes/video.route");
 const appRoute = require("./routes/app.route");
+const authRoute = require("./routes/auth.route");
 
 
 dotenv.config();
@@ -14,6 +15,7 @@ app.use(express.json())
 app.use(appRoute)
 
 app.use("/video", videoRoute)
+app.use("/auth", authRoute)
 
 
 
