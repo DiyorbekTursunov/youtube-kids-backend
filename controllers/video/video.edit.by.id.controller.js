@@ -10,13 +10,15 @@ const editVideoById = async (req, res) => {
             video_description,
             video_views,
             video_likes,
-            video_clicked_count,
             video_rec_controller,
-            video_type
+            video_type,
+            liked_videos_user_id,
+            recently_viewed_videos_user_id,
+
         } = req.body;
 
         // Validate input fields
-        if (!video_youtube_id || !video_img_url || !video_name || !video_description || !video_views || !video_likes || !video_clicked_count || !video_rec_controller || !video_type) {
+        if (!video_youtube_id && !video_img_url && !video_name && !video_description && !video_views && !video_likes && !video_rec_controller && !video_type && !liked_videos_user_id && !recently_viewed_videos_user_id) {
             return res.status(400).json({ message: "Please fill all fields" });
         }
 
@@ -28,7 +30,6 @@ const editVideoById = async (req, res) => {
             video_description,
             video_views,
             video_likes,
-            video_clicked_count,
             video_rec_controller,
             video_type
         });

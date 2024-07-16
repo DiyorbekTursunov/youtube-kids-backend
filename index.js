@@ -5,12 +5,16 @@ const videoRoute = require("./routes/video.route");
 const appRoute = require("./routes/app.route");
 const authRoute = require("./routes/auth.route");
 
+const cors = require("cors");
+
+// Enable all CORS requests
 
 dotenv.config();
 // Configures dotenv to work in your application
 
 const app = express();
 
+app.use(cors());
 app.use(express.json())
 app.use(appRoute)
 

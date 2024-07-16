@@ -4,7 +4,7 @@ const postModel = require("../../models/video.model");
 const delVideoById = async (req, res) => {
     try {
         // get the _id from the request body
-        const { _id } = req.body;
+        const { _id } = req.body;   
 
         // Validate input fields
         if (!_id.length > 3) {
