@@ -14,12 +14,10 @@ const authRegister = async (req, res) => {
             return res.status(400).json({ message: "Parol 6 tadan ko'p bo'lishi kerak" }); // Password should be at least 6 characters long
         }
 
-        // Check if user already exists
-        const existingUser = await userModel.findOne({ username });
-
-
-        if (existingUser) {
-            return res.status(409).json({ message: "Foydalanuvchi allaqchon mavjud" }); // User already exists
+        // Check if user with the same lastname already exists
+        const existingLastname = await userModel.findOne({ lastname });
+        if (existingLastname) {
+            return res.status(409).json({ message: "Foydalanuvchi shu familya bilan allaqchon mavjud" }); // User with this lastname already exists
         }
 
         // Hash the password

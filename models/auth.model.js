@@ -9,7 +9,7 @@ const userSchema = new Schema({
     },
     lastname: {
         type: String,
-        unique: true
+        required: true // Removed unique: true
     },
     password: {
         type: String,
@@ -25,4 +25,4 @@ const userSchema = new Schema({
     },
 });
 
-module.exports = model("User", userSchema)
+module.exports = model("User", userSchema);
