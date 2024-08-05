@@ -11,13 +11,12 @@ const createVideo = async (req, res) => {
             video_description,
             video_views,
             video_likes,
-            video_clicked_count,
             video_rec_controller,
             video_type
         } = req.body;
 
         // Validate input fields
-        if (!video_youtube_id || !video_img_url || !video_name || !video_description || !video_views || !video_likes || !video_clicked_count || !video_rec_controller || !video_type) {
+        if (!video_youtube_id || !video_img_url || !video_name || !video_description || !video_views || !video_likes || !video_rec_controller || !video_type) {
             return res.status(400).json({ message: "Please fill all fields" });
         }
 
@@ -29,7 +28,6 @@ const createVideo = async (req, res) => {
             video_description,
             video_views,
             video_likes,
-            video_clicked_count,
             video_rec_controller,
             video_type
         });

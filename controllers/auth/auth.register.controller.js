@@ -17,7 +17,7 @@ const authRegister = async (req, res) => {
         // Check if user with the same lastname already exists
         const existingLastname = await userModel.findOne({ lastname });
         if (existingLastname) {
-            return res.status(409).json({ message: "Foydalanuvchi shu familya bilan allaqchon mavjud" }); // User with this lastname already exists
+            return res.status(409).json({ message: "Foydalanuvchi familyasi bilan allaqchon mavjud" }); // User with this lastname already exists
         }
 
         // Hash the password
