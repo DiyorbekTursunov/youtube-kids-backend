@@ -11,6 +11,10 @@ const userSchema = new Schema({
         type: String,
         required: true // Removed unique: true
     },
+    profile_img_url: {
+        type: String,
+        required: false,
+    },
     password: {
         type: String,
         required: true
