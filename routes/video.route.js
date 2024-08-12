@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const createVideo = require("../controllers/video/video.create.controllers");
 const getAllVideo = require("../controllers/video/video.get.all.controller");
+const getAllVideoByPage = require("../controllers/video/video.get.all.by.page.controller");
+
+const createVideo = require("../controllers/video/video.create.controllers");
 const getVideoById = require("../controllers/video/video.get.by.id.all.controller");
 const delVideoById = require("../controllers/video/video.del.by.id.controller");
 const editVideoById = require("../controllers/video/video.edit.by.id.controller");
@@ -13,6 +15,7 @@ const searchVideosByTypeAndName = require("../controllers/video/video.search.vid
 
 
 router.get('/get-all', getAllVideo);
+router.get('/get-all-by-page', getAllVideoByPage);
 router.get('/search-videos', searchVideosByTypeAndName);
 router.post('/get-by-id', getVideoById);
 router.post('/create', createVideo);
