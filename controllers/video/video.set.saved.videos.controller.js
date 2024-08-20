@@ -2,7 +2,7 @@ const postModel = require("../../models/video.model");
 const userModel = require("../../models/auth.model");
 
 
-export const setSavedVideoForUser = async (req, res) => {
+const setSavedVideoForUser = async (req, res) => {
     try {
         // get the video_id and user_id from the request body
         const { video_id, user_id } = req.body;
@@ -42,3 +42,7 @@ export const setSavedVideoForUser = async (req, res) => {
         res.status(500).json({ message: "Server Error" });
     }
 }
+
+
+
+module.exports = setSavedVideoForUser
