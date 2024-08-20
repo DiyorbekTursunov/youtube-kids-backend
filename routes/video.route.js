@@ -23,6 +23,7 @@ router.delete('/delete', delVideoById);
 router.put('/edit', editVideoById);
 router.post('/set-like', setVideoLike);
 router.post('/set_my_views', addRecentlyViewedVideoForUser);
+router.post('/set_saved_views', addRecentlyViewedVideoForUser);
 
 
 module.exports = router;
