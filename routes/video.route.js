@@ -11,6 +11,7 @@ const editVideoById = require("../controllers/video/video.edit.by.id.controller"
 const setVideoLike = require("../controllers/video/video.set.like.controller");
 const addRecentlyViewedVideoForUser = require("../controllers/video/auth.set_my_views.controller");
 const searchVideosByTypeAndName = require("../controllers/video/video.search.videos.by.type.name");
+const { setSavedVideoForUser } = require("../controllers/video/video.set.saved.videos.controller");
 
 
 
@@ -23,7 +24,7 @@ router.delete('/delete', delVideoById);
 router.put('/edit', editVideoById);
 router.post('/set-like', setVideoLike);
 router.post('/set_my_views', addRecentlyViewedVideoForUser);
-router.post('/set_saved_views', addRecentlyViewedVideoForUser);
+router.post('/set_saved_views', setSavedVideoForUser);
 
 
 module.exports = router;
